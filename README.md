@@ -6,6 +6,7 @@
 
 ## Features
 - Config
+- Integrated Tablist
 
 ## Patches
 **All credit goes to the people that made these patches.**<br>
