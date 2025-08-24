@@ -20,8 +20,6 @@ import org.bukkit.event.player.PlayerVelocityEvent;
 import ga.windpvp.windspigot.config.WindSpigotConfig;
 import it.unimi.dsi.fastutil.objects.Reference2BooleanOpenHashMap;
 
-import javax.xml.crypto.Data;
-
 // WindSpigot - sendPacket methods have been replaced with the queuePacket method
 public class EntityTrackerEntry {
 

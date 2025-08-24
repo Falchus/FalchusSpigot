@@ -4,6 +4,9 @@
 
 **FalchusSpigot supports Java 8 to Java 18!**
 
+## Features
+- Config
+
 ## Patches
 **All credit goes to the people that made these patches.**<br>
 *Give credit where credit is due!*
