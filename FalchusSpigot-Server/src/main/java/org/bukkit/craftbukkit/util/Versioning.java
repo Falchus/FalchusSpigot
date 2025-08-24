@@ -13,7 +13,7 @@ public final class Versioning {
 		String result = "Unknown-Version";
 
 		InputStream stream = Bukkit.class.getClassLoader()
-				.getResourceAsStream("META-INF/maven/ga.windpvp.windspigot/api/pom.properties");
+				.getResourceAsStream("META-INF/maven/com.falchus/api/pom.properties");
 		Properties properties = new Properties();
 
 		if (stream != null) {
