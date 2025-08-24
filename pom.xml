@@ -9,17 +9,17 @@
         <version>7</version>
     </parent>
 
-    <groupId>ga.windpvp.windspigot</groupId>
+    <groupId>com.falchus</groupId>
     <artifactId>parent</artifactId>
     <version>dev-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>WindSpigot-Parent</name>
+    <name>FalchusSpigot-Parent</name>
     <description>Parent project for all WindSpigot modules.</description>
 
     <modules>
-        <module>WindSpigot-Server</module>
-        <module>WindSpigot-API</module>
+        <module>FalchusSpigot-Server</module>
+        <module>FalchusSpigot-API</module>
     </modules>
 
     <build>

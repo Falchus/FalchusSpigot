@@ -1,25 +1,8 @@
-# WindSpigot [![GitHub Workflow Status](https://github.com/Wind-Development/WindSpigot/actions/workflows/windspigot-build-and-upload.yml/badge.svg)](https://nightly.link/Wind-Development/WindSpigot/workflows/windspigot-build-and-upload/master/WindSpigot-server.zip) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/3c5ee8d2ef324d23ab085d89139ea0e7)](https://www.codacy.com/gh/Wind-Development/WindSpigot/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Wind-Development/WindSpigot&amp;utm_campaign=Badge_Grade) [![Discord](https://img.shields.io/discord/949530782261714974?label=discord)](https://discord.gg/hqbJvQZpV2)
+# FalchusSpigot
 
-##### WindSpigot is a 1.8.8 Minecraft server software focused on improving overall server performance and pvp mechanics based on a **[fork of NachoSpigot](https://github.com/Argarian-Network/NachoSpigot/tree/async-entity-tracker)**.
+##### FalchusSpigot is a 1.8.8 Minecraft server software focused on improving overall server performance and pvp mechanics based on a **[fork of WindSpigot](https://github.com/Wind-Development/WindSpigot)**.
 
-**WindSpigot supports Java 8 to Java 18!**
-
-## Downloads
-See the **[releases](https://github.com/Wind-Development/WindSpigot/releases)** tab for the latest release.
-
-## FAQ
-
-#### What combat mechanics are improved on?
-WindSpigot makes potion speed and hit delay configurable. We also have NachoSpigot's configurable knockback.
-
-#### How do I customize knockback?
-Knockback can be configured in-game with the /kb command. See the **[wiki](https://github.com/Wind-Development/WindSpigot/wiki/Knockback-Configuration)** for information on settings.
-
-#### What does WindSpigot do to improve overall performance?
-WindSpigot moves heavy work off of the main server thread and splits up the server load.
-
-#### What other modifications does WindSpigot have?
-See the patches list below.
+**FalchusSpigot supports Java 8 to Java 18!**
 
 ## Patches
 **All credit goes to the people that made these patches.**<br>
@@ -175,6 +158,7 @@ See the patches list below.
 
 [SportPaper-0027] Fix head rotation packet spam
 [SportPaper-0043] Get blocks in Chunk API
+[SportPaper-0108] Optimize Network Queue
 [SportPaper-0162] Fix PlayerInteractEvent not cancelling properly
 [SportPaper-0197] Optimize head rotation patch
 [SportPaper-0201] Cache block break animation packet
