@@ -97,8 +97,6 @@ public class FalchusSpigotConfig {
         c.addComment("config-version", "Configuration version, do NOT modify this!");
 
         c.addComment("settings.player.obfuscate.health", "Obfuscate player health to other players.");
-
-        c.addComment("settings.player.elements.tablist", "Display integrated Tablist.");
     }
 
     private static void set(String path, Object val) {
@@ -138,14 +136,5 @@ public class FalchusSpigotConfig {
     public static boolean playerObfuscateHealth;
     private static void playerObfuscate() {
         playerObfuscateHealth = getBoolean("settings.player.obfuscate.health", true);
-    }
-
-    public static boolean playerTablist;
-    public static String playerTablistHeader;
-    public static String playerTablistFooter;
-    private static void playerTablist() {
-        playerTablist = getBoolean("settings.player.elements.tablist", false);
-        playerTablistHeader = getString("settings.player.elements.tablist.header", "§f§lFalchusSpigot");
-        playerTablistFooter = getString("settings.player.elements.tablist.footer", "§f§lv" + FalchusSpigot.version);
     }
 }
