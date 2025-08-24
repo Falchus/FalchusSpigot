@@ -35,7 +35,7 @@ jobs:
         path: FalchusSpigot-Server/target/FalchusSpigot.jar
 
     - name: Upload API Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: FalchusSpigot-API
         path: FalchusSpigot-API/target/FalchusSpigot-API.jar
