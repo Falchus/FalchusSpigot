@@ -10,6 +10,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
 import com.falchus.FalchusSpigot;
+import com.falchus.config.FalchusSpigotConfig;
 import ga.windpvp.windspigot.random.FastRandom;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -192,6 +193,10 @@ public class DedicatedServer extends MinecraftServer implements IMinecraftServer
 			// WindSpigot start - config
 			WindSpigotConfig.init((File) options.valueOf("windspigot-settings"));
 			// WindSpigot end
+
+            // FalchusSpigot start - config
+            FalchusSpigotConfig.init((File) options.valueOf("falchusspigot-settins"));
+            // FalchusSpigot end
 			
 			this.a(new DedicatedPlayerList(this));
 			org.spigotmc.SpigotConfig.init((File) options.valueOf("spigot-settings"));

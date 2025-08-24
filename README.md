@@ -164,6 +164,7 @@
 [SportPaper-0201] Cache block break animation packet
 [SportPaper-0203] Fix Teleport Invisibility
 [SportPaper-0204] Optimize toLegacyData removing unneeded sanity checks
+[SportPaper-0223] Obfuscate player health to other players
 
 [PaperBin-????] WorldServer#everyoneDeeplySleeping optimization
 

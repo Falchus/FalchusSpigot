@@ -24,6 +24,7 @@ import java.util.regex.Pattern;
 import javax.imageio.ImageIO;
 
 import com.falchus.FalchusSpigot;
+import com.falchus.config.FalchusSpigotConfig;
 import org.apache.commons.lang.Validate;
 import org.bukkit.BanList;
 import org.bukkit.Bukkit;
@@ -849,6 +850,10 @@ public final class CraftServer implements Server {
 		// WindSpigot start - config
 		WindSpigotConfig.init((File) console.options.valueOf("windspigot-settings"));
 		// WindSpigot end
+
+        // FalchusSpigot start - config
+        FalchusSpigotConfig.init((File) console.options.valueOf("falchusspigot-settings"));
+        // FalchusSpigot end
 		
 		for (WorldServer world : console.worlds) {
 			world.worldData.setDifficulty(difficulty);
