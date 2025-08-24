@@ -49,35 +49,37 @@ public class KnockbackConfig {
 			final KnockbackProfile vanillaProfile = new CraftKnockbackProfile("vanilla");
 			vanillaProfile.save(true);
 		}
-		
-		if (!keys.contains("windpvp")) {
-			// WIP custom profile
-			final KnockbackProfile windpvpProfile = new CraftKnockbackProfile("windpvp");
-			
-			windpvpProfile.setRodHorizontal(0.7);
-			windpvpProfile.setRodVertical(0.5);
-			windpvpProfile.setSnowballHorizontal(0.7);
-			windpvpProfile.setSnowballHorizontal(0.5);
-			windpvpProfile.setEggHorizontal(0.7);
-			windpvpProfile.setEggVertical(0.5);
-			windpvpProfile.setArrowHorizontal(0.5);
-			
-			windpvpProfile.setFrictionHorizontal(1.85);
-			windpvpProfile.setFrictionVertical(2.0);
-			
-			windpvpProfile.setHorizontal(0.1);
-			windpvpProfile.setVertical(0.3);
-			
-			windpvpProfile.setExtraHorizontal(0.75);
-			windpvpProfile.setExtraVertical(0.1);
-			
-			windpvpProfile.setWTapExtraHorizontal(0.76);
-			windpvpProfile.setWTapExtraVertical(0.1);
-			
-			windpvpProfile.setAddHorizontal(0.04);	
-			
-			windpvpProfile.save(true);
-		}
+
+        // FalchusSpigot start
+//		if (!keys.contains("windpvp")) {
+//			// WIP custom profile
+//			final KnockbackProfile windpvpProfile = new CraftKnockbackProfile("windpvp");
+//
+//			windpvpProfile.setRodHorizontal(0.7);
+//			windpvpProfile.setRodVertical(0.5);
+//			windpvpProfile.setSnowballHorizontal(0.7);
+//			windpvpProfile.setSnowballHorizontal(0.5);
+//			windpvpProfile.setEggHorizontal(0.7);
+//			windpvpProfile.setEggVertical(0.5);
+//			windpvpProfile.setArrowHorizontal(0.5);
+//
+//			windpvpProfile.setFrictionHorizontal(1.85);
+//			windpvpProfile.setFrictionVertical(2.0);
+//
+//			windpvpProfile.setHorizontal(0.1);
+//			windpvpProfile.setVertical(0.3);
+//
+//			windpvpProfile.setExtraHorizontal(0.75);
+//			windpvpProfile.setExtraVertical(0.1);
+//
+//			windpvpProfile.setWTapExtraHorizontal(0.76);
+//			windpvpProfile.setWTapExtraVertical(0.1);
+//
+//			windpvpProfile.setAddHorizontal(0.04);
+//
+//			windpvpProfile.save(true);
+//		}
+        // FalchusSpigot end
 		
 		if (!keys.contains("hypixel")) {
 			// Values taken from here: https://www.spigotmc.org/resources/legacykb-disable-netherite-knockback-resistance.86080/
@@ -89,30 +91,32 @@ public class KnockbackConfig {
 			
 			hypixelProfile.save(true);
 		}
-		
-		if (!keys.contains("kohi")) {
-			final KnockbackProfile defaultProfile = new CraftKnockbackProfile("kohi"); 
 
-			defaultProfile.setHorizontal(0.35);
-			defaultProfile.setRodHorizontal(0.35);
-			defaultProfile.setArrowHorizontal(0.35);
-			defaultProfile.setPearlHorizontal(0.35);
-			defaultProfile.setSnowballHorizontal(0.35);
-			defaultProfile.setEggHorizontal(0.35);
-			defaultProfile.setExtraHorizontal(0.425);
-			defaultProfile.setWTapExtraHorizontal(0.425);
-
-			defaultProfile.setVertical(0.35);
-			defaultProfile.setRodVertical(0.35);
-			defaultProfile.setArrowVertical(0.35);
-			defaultProfile.setPearlVertical(0.35);
-			defaultProfile.setSnowballVertical(0.35);
-			defaultProfile.setEggVertical(0.35);
-			defaultProfile.setExtraVertical(0.085);
-			defaultProfile.setWTapExtraVertical(0.085);
-
-			defaultProfile.save(true);
-		}
+        // FalchusSpigot start
+//		if (!keys.contains("kohi")) {
+//			final KnockbackProfile defaultProfile = new CraftKnockbackProfile("kohi");
+//
+//			defaultProfile.setHorizontal(0.35);
+//			defaultProfile.setRodHorizontal(0.35);
+//			defaultProfile.setArrowHorizontal(0.35);
+//			defaultProfile.setPearlHorizontal(0.35);
+//			defaultProfile.setSnowballHorizontal(0.35);
+//			defaultProfile.setEggHorizontal(0.35);
+//			defaultProfile.setExtraHorizontal(0.425);
+//			defaultProfile.setWTapExtraHorizontal(0.425);
+//
+//			defaultProfile.setVertical(0.35);
+//			defaultProfile.setRodVertical(0.35);
+//			defaultProfile.setArrowVertical(0.35);
+//			defaultProfile.setPearlVertical(0.35);
+//			defaultProfile.setSnowballVertical(0.35);
+//			defaultProfile.setEggVertical(0.35);
+//			defaultProfile.setExtraVertical(0.085);
+//			defaultProfile.setWTapExtraVertical(0.085);
+//
+//			defaultProfile.save(true);
+//		}
+        // FalchusSpigot end
 		
 		// Reload keys
 		keys = getKeys("knockback.profiles");
@@ -151,13 +155,14 @@ public class KnockbackConfig {
 			profile.setEggHorizontal(getDouble(path + ".projectiles.egg.horizontal", 0.4D));
 			profile.setEggVertical(getDouble(path + ".projectiles.egg.vertical", 0.4D));
 		}
-		currentKb = getKbProfileByName(getString("knockback.current", "kohi"));
+        // FalchusSpigot - changed default from "kohi" to "hypixel"
+		currentKb = getKbProfileByName(getString("knockback.current", "hypixel"));
 		if (currentKb == null) {
-			WindSpigot.LOGGER.warn("Knockback profile selected was not found, using profile 'kohi' for now!");
-			currentKb = getKbProfileByName("kohi");
+			WindSpigot.LOGGER.warn("Knockback profile selected was not found, using profile 'hypixel' for now!");
+			currentKb = getKbProfileByName("hypixel");
 			
-			WindSpigot.LOGGER.info("Setting default knockback as 'kohi'...");
-			set("knockback.current", "kohi");
+			WindSpigot.LOGGER.info("Setting default knockback as 'hypixel'...");
+			set("knockback.current", "hypixel");
 		}
 		save();
 	}
