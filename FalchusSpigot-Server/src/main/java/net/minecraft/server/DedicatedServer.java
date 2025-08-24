@@ -195,7 +195,7 @@ public class DedicatedServer extends MinecraftServer implements IMinecraftServer
 			// WindSpigot end
 
             // FalchusSpigot start - config
-            FalchusSpigotConfig.init((File) options.valueOf("falchusspigot-settins"));
+            FalchusSpigotConfig.init((File) options.valueOf("falchusspigot-settings"));
             // FalchusSpigot end
 			
 			this.a(new DedicatedPlayerList(this));
