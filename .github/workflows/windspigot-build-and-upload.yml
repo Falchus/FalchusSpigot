@@ -1,4 +1,4 @@
-name: WindSpigot Build and Upload
+name: FalchusSpigot Build and Upload
 
 on:
   push:
@@ -31,11 +31,11 @@ jobs:
     - name: Upload Server Artifact
       uses: actions/upload-artifact@v3
       with:
-        name: WindSpigot-server
-        path: WindSpigot-Server/target/WindSpigot.jar
+        name: FalchusSpigot-server
+        path: FalchusSpigot-Server/target/FalchusSpigot.jar
 
     - name: Upload API Artifact
       uses: actions/upload-artifact@v3
       with:
-        name: WindSpigot-API
-        path: WindSpigot-API/target/WindSpigot-API.jar
+        name: FalchusSpigot-API
+        path: FalchusSpigot-API/target/FalchusSpigot-API.jar
