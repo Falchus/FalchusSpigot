@@ -116,6 +116,10 @@ public class Main {
 				acceptsAll(asList("windspigot", "windspigot-settings"), "File for windspigot settings").withRequiredArg()
 				.ofType(File.class).defaultsTo(new File("windspigot.yml")).describedAs("Yml file");
 				// WindSpigot end
+                // FalchusSpigot start - config
+                acceptsAll(asList("falchusspigot", "falchusspigot-settings"), "File for falchusspigot settings").withRequiredArg()
+                .ofType(File.class).defaultsTo(new File("falchusspigot.yml")).describedAs("Yml file");
+                // FalchusSpigot end
 			}
 		};
 
