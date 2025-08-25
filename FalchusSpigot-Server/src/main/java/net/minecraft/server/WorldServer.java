@@ -30,6 +30,7 @@ import ga.windpvp.windspigot.async.entitytracker.AsyncEntityTracker;
 import ga.windpvp.windspigot.async.entitytracker.MultithreadedEntityTracker;
 import ga.windpvp.windspigot.config.WindSpigotConfig;
 import ga.windpvp.windspigot.world.WorldTicker;
+import com.falchus.config.FalchusSpigotConfig;
 
 public class WorldServer extends World implements IAsyncTaskHandler {
 
@@ -902,7 +903,7 @@ public class WorldServer extends World implements IAsyncTaskHandler {
 
 	@Override
 	public boolean a(EntityHuman entityhuman, BlockPosition blockposition) {
-		return !this.server.a(this, blockposition, entityhuman) && this.getWorldBorder().a(blockposition);
+		return !this.server.a(this, blockposition, entityhuman) && (this.getWorldBorder().a(blockposition) || (FalchusSpigotConfig.playerInteractionsChestsInBorder && this.getType(blockposition).getBlock() instanceof BlockChest)); // FalchusSpigot
 	}
 
 	@Override
