@@ -8,6 +8,7 @@
 - Config
 - Player Health Obfuscation
 - HelpCommand toggleable
+- Players can open chests even if they are under blocks
 
 ## Patches
 **All credit goes to the people that made these patches.**<br>
