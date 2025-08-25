@@ -1687,6 +1687,11 @@ public final class CraftServer implements Server {
 		return WindSpigotConfig.enablePluginsCommand;
 	}
 
+    @Override
+    public boolean helpCommandEnabled() {
+        return FalchusSpigotConfig.commandHelp;
+    }
+
 	public EntityMetadataStore getEntityMetadata() {
 		return entityMetadata;
 	}

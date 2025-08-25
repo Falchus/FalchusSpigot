@@ -717,6 +717,10 @@ public interface Server extends PluginMessageRecipient {
 		return true;
 	}
 
+    default boolean helpCommandEnabled() {
+        return true;
+    }
+
 	/**
 	 * Gets the folder that contains all of the various {@link World}s.
 	 *

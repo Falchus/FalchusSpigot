@@ -888,6 +888,10 @@ public final class Bukkit {
 		return server.pluginsCommandEnabled();
 	}
 
+    public static boolean helpCommandEnabled() {
+        return server.helpCommandEnabled();
+    }
+
 	/**
 	 * Gets the folder that contains all of the various {@link World}s.
 	 *

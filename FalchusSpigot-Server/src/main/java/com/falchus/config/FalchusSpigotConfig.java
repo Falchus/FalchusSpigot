@@ -97,6 +97,7 @@ public class FalchusSpigotConfig {
         c.addComment("config-version", "Configuration version, do NOT modify this!");
 
         c.addComment("settings.player.obfuscate.health", "Obfuscate player health to other players.");
+        c.addComment("settings.commands", "Toggle Commands.");
     }
 
     private static void set(String path, Object val) {
@@ -136,5 +137,10 @@ public class FalchusSpigotConfig {
     public static boolean playerObfuscateHealth;
     private static void playerObfuscate() {
         playerObfuscateHealth = getBoolean("settings.player.obfuscate.health", true);
+    }
+
+    public static boolean commandHelp;
+    private static void commands() {
+        commandHelp = getBoolean("settings.commands.help", true);
     }
 }
