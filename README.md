@@ -201,4 +201,6 @@
 [Sugarcane-0022] Add YAML comments
 
 [AW-Spigot-????] Fast randoms
+
+[SpigotFix-0003] Async chunk (un-)loading
 ```
