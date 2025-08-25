@@ -1,5 +1,8 @@
 package net.minecraft.server;
 
+import com.falchus.FalchusSpigot;
+import com.falchus.config.FalchusSpigotConfig;
+
 import java.util.Iterator;
 
 public class BlockChest extends BlockContainer {
@@ -379,7 +382,7 @@ public class BlockChest extends BlockContainer {
 		Object object = tileentity;
 
 		if (flag && this.n(world, blockposition)) {
-			return null;
+            if (!FalchusSpigotConfig.playerInteractionsChestsUnderBlocks) return null; // FalchusSpigot
 		}
 
 		for (EnumDirection enumdirection : EnumDirection.EnumDirectionLimit.HORIZONTAL) {
@@ -393,7 +396,7 @@ public class BlockChest extends BlockContainer {
 
 			if (block == this) {
 				if (this.n(world, blockposition1)) { // Paper - check for allowBlocked flag - MC-99321
-					return null;
+					if (!FalchusSpigotConfig.playerInteractionsChestsUnderBlocks) return null; // FalchusSpigot
 				}
 
 				TileEntity tileentity1 = world.getTileEntity(blockposition1);
