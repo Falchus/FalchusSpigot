@@ -1,11 +1,7 @@
 package xyz.sculas.nacho.anticrash;
 
 import ga.windpvp.windspigot.protocol.PacketListener;
-import net.minecraft.server.ChatMessage;
-import net.minecraft.server.Packet;
-import net.minecraft.server.PacketDataSerializer;
-import net.minecraft.server.PacketPlayInCustomPayload;
-import net.minecraft.server.PlayerConnection;
+import net.minecraft.server.*;
 
 public class AntiCrash implements PacketListener {
 	@Override
@@ -27,6 +23,11 @@ public class AntiCrash implements PacketListener {
 			 * ChatMessage("Wrong capacity!")); return false; }
 			 */
 		}
+        // FalchusSpigot start
+        if (packet instanceof PacketHandshakingInSetProtocol) {
+            playerConnection.getPlayer().kickPlayer("Invalid packets.");
+        }
+        // FalchusSpigot end
 		return true;
 	}
 }
