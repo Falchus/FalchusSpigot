@@ -12,6 +12,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 
+import com.falchus.config.FalchusSpigotConfig;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -993,14 +994,14 @@ public class PlayerConnection implements PacketListenerPlayIn, IUpdatePlayerList
 			}
 
 			if (!worldserver.getWorldBorder().a(blockposition)) {
-				return;
+                if (!(FalchusSpigotConfig.playerInteractionsChestsInBorder && worldserver.getType(blockposition).getBlock() instanceof BlockChest)) return; // FalchusSpigot
 			}
 
 			if (this.checkMovement
 					&& this.player.e(blockposition.getX() + 0.5D, blockposition.getY() + 0.5D,
 							blockposition.getZ() + 0.5D) < 64.0D
 					&& !this.minecraftServer.a(worldserver, blockposition, this.player)
-					&& worldserver.getWorldBorder().a(blockposition)) {
+					&& (worldserver.getWorldBorder().a(blockposition) || (FalchusSpigotConfig.playerInteractionsChestsInBorder && worldserver.getType(blockposition).getBlock() instanceof BlockChest))) { // FalchusSpigot
 				always = throttled || !this.player.playerInteractManager.interact(this.player, worldserver, itemstack,
 						blockposition, enumdirection, packetplayinblockplace.d(), packetplayinblockplace.e(),
 						packetplayinblockplace.f());

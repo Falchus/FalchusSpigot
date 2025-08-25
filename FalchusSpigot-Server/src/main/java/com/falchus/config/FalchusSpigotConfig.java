@@ -99,6 +99,7 @@ public class FalchusSpigotConfig {
         c.addComment("settings.player.obfuscate.health", "Obfuscate player health to other players.");
         c.addComment("settings.commands", "Toggle Commands.");
         c.addComment("settings.player.interactions.chestsUnderBlocks", "Allow players to open chests even if they are under blocks.");
+        c.addComment("settings.player.interactions.chestsInBorder", "Allow players to open chests even if they are inside the border.");
     }
 
     private static void set(String path, Object val) {
@@ -146,7 +147,9 @@ public class FalchusSpigotConfig {
     }
 
     public static boolean playerInteractionsChestsUnderBlocks;
+    public static boolean playerInteractionsChestsInBorder;
     private static void playerInteractions() {
         playerInteractionsChestsUnderBlocks = getBoolean("settings.player.interactions.chestsUnderBlocks", false);
+        playerInteractionsChestsInBorder = getBoolean("settings.player.interactions.chestsInBorder", false);
     }
 }
