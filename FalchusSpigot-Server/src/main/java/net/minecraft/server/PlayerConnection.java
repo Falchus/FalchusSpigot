@@ -12,6 +12,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 
+import com.falchus.config.FalchusSpigotConfig;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -812,7 +813,7 @@ public class PlayerConnection implements PacketListenerPlayIn, IUpdatePlayerList
 			} else {
 				if (packetplayinblockdig.c() == PacketPlayInBlockDig.EnumPlayerDigType.START_DESTROY_BLOCK) {
 					if (!this.minecraftServer.a(worldserver, blockposition, this.player)
-							&& (worldserver.getWorldBorder().a(blockposition) || (FalchusSpigotConfig.playerInteractionsChestsInBorder && worldserver.getType(blockposition).getBlock() instanceof BlockChest))) { // FalchusSpigot
+							&& worldserver.getWorldBorder().a(blockposition)) {
 						this.player.playerInteractManager.a(blockposition, packetplayinblockdig.b());
 					} else {
 						// CraftBukkit start - fire PlayerInteractEvent

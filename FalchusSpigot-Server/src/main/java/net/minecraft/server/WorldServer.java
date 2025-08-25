@@ -903,7 +903,7 @@ public class WorldServer extends World implements IAsyncTaskHandler {
 
 	@Override
 	public boolean a(EntityHuman entityhuman, BlockPosition blockposition) {
-		return !this.server.a(this, blockposition, entityhuman) && (this.getWorldBorder().a(blockposition) || (FalchusSpigotConfig.playerInteractionsChestsInBorder && this.getType(blockposition).getBlock() instanceof BlockChest)); // FalchusSpigot
+		return !this.server.a(this, blockposition, entityhuman) && this.getWorldBorder().a(blockposition);
 	}
 
 	@Override
