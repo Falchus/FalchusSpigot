@@ -15,7 +15,7 @@ public class ItemFishingRod extends Item {
 		if (entityhuman.hookedFish != null) {
 			int i = entityhuman.hookedFish.l();
 
-			itemstack.damage(i, entityhuman);
+			// itemstack.damage(i, entityhuman); // FalchusSpigot
 			entityhuman.bw();
 		} else {
 			// CraftBukkit start
@@ -35,6 +35,7 @@ public class ItemFishingRod extends Item {
 				world.addEntity(hook); // CraftBukkit - moved creation up
 			}
 
+            itemstack.damage(1, entityhuman); // FalchusSpigot
 			entityhuman.bw();
 			entityhuman.b(StatisticList.USE_ITEM_COUNT[Item.getId(this)]);
 		}

@@ -4,11 +4,14 @@
 
 **FalchusSpigot supports Java 8 to Java 18!**
 
-## Features
+## Our Features
+These features don't include those of the patches - these are all of the features we added ourselves!
 - Config
-- Player Health Obfuscation
-- HelpCommand toggleable
-- Players can open chests even if they are under blocks
+  - Player Health Obfuscation
+  - HelpCommand toggleable
+  - Players can open chests even if they are under blocks
+- Bugfixes
+  - Fixed Fishing Rods not losing durability unless pulled back (durability is now reduced immediately on use)
 
 ## Patches
 **All credit goes to the people that made these patches.**<br>
