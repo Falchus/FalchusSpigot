@@ -7,6 +7,7 @@ public class FalchusSpigot {
 
     private static FalchusSpigot instance;
     public static final String version = "1.0.0";
+    public static final String prefix = "§f§lFalchusSpigot§r §8× §7";
 
     public static final Logger LOGGER = LogManager.getLogger();
 

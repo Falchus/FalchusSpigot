@@ -3,6 +3,8 @@ package org.bukkit.event.player;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 
+import java.util.UUID;
+
 /**
  * Called when a player joins a server
  */

@@ -1,6 +1,7 @@
 package org.bukkit;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
@@ -90,14 +91,16 @@ public interface Chunk {
 	 *                 exist
 	 * @return true if the chunk has loaded successfully, otherwise false
 	 */
-	boolean load(boolean generate);
+    // [SpigotFix-0003] start
+	CompletableFuture<Boolean> load(boolean generate);
 
 	/**
 	 * Loads the chunk.
 	 *
 	 * @return true if the chunk has loaded successfully, otherwise false
 	 */
-	boolean load();
+    CompletableFuture<Boolean> load();
+    // [SpigotFix-0003] end
 
 	/**
 	 * Unloads and optionally saves the Chunk
