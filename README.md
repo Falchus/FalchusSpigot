@@ -203,4 +203,5 @@
 [AW-Spigot-????] Fast randoms
 
 [SpigotFix-0003] Async chunk (un-)loading
+[SpigotFix-0004] Allowed async TimingHandler#stopTiming to be called async & cleared AsyncCatcher#catchOp (causing trouble)
 ```

@@ -4,11 +4,17 @@ import org.bukkit.Bukkit;
 
 public class AsyncCatcher {
 
-	public static boolean enabled = true;
+    // [SpigotFix-0004] start
+	public static boolean enabled = false;
 
 	public static void catchOp(String reason) {
-		if (enabled && !Bukkit.isPrimaryThread()) {
-			throw new IllegalStateException("Asynchronous " + reason + "!");
-		}
+        if (!enabled) {
+            return;
+        }
+        if (Bukkit.isPrimaryThread()) {
+            return;
+        }
+        throw new IllegalStateException("Asynchronous " + reason);
 	}
+    // [SpigotFix-0004] end
 }
