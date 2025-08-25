@@ -6,6 +6,8 @@
 
 ## Features
 - Config
+- Player Health Obfuscation
+- HelpCommand toggleable
 
 ## Patches
 **All credit goes to the people that made these patches.**<br>
