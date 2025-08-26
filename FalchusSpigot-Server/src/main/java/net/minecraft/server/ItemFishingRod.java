@@ -20,6 +20,9 @@ public class ItemFishingRod extends Item {
 		} else {
 			// FalchusSpigot start
 			if (itemstack.getData() >= itemstack.j() - 1) {
+				itemstack.damage(1, entityhuman);
+				entityhuman.bw();
+				entityhuman.b(StatisticList.USE_ITEM_COUNT[Item.getId(this)]);
 				return itemstack;
 			}
 			// FalchusSpigot end
