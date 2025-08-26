@@ -223,10 +223,10 @@ public class NachoConfig {
 		c.addComment("settings.event.fire-leaf-decay-event", "Toggles the leaf decay event");
 	}
 
+    // FalchusSpigot start
 	public static String serverBrandName = "FalchusSpigot";
 
 	private static void serverBrandName() {
-        // FalchusSpigot start
 //		serverBrandName = getString("settings.brand-name", "FalchusSpigot");
 //		c.addComment("settings.brand-name",
 //				"Changes the brand name of the server.\nThis will show in statistics, server lists, client crashes,\n and in the client debug screen. (accessed by pressing F3)");

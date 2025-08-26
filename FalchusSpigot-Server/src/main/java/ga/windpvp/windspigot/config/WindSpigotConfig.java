@@ -555,9 +555,9 @@ public class WindSpigotConfig {
 		leavesDecayEvent = getBoolean("settings.event.fire-leaf-decay-event", true);
 	}
 
+    // FalchusSpigot start
 	public static String serverBrandName = "FalchusSpigot";
 
-    // FalchusSpigot start
 //	private static void serverBrandName() {
 //		serverBrandName = getString("settings.brand-name", "FalchusSpigot");
 //	}
