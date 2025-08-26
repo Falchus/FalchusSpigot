@@ -207,8 +207,4 @@ These features don't include those of the patches - these are all of the feature
 [Sugarcane-0022] Add YAML comments
 
 [AW-Spigot-????] Fast randoms
-
-[SpigotFix-0002] Async player kicking
-[SpigotFix-0003] Async chunk (un-)loading
-[SpigotFix-0004] Allowed async TimingHandler#stopTiming to be called async & cleared AsyncCatcher#catchOp (causing trouble)
 ```

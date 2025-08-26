@@ -4,7 +4,6 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
 
 import org.bukkit.Chunk;
 import org.bukkit.ChunkSnapshot;
@@ -140,17 +139,15 @@ public class CraftChunk implements Chunk {
 		return getWorld().isChunkLoaded(this);
 	}
 
-    // [SpigotFix-0003] start
 	@Override
-	public CompletableFuture<Boolean> load() {
+	public boolean load() {
 		return getWorld().loadChunk(getX(), getZ(), true);
 	}
 
 	@Override
-	public CompletableFuture<Boolean> load(boolean generate) {
+	public boolean load(boolean generate) {
 		return getWorld().loadChunk(getX(), getZ(), generate);
 	}
-    // [SpigotFix-0003] end
 
 	@Override
 	public boolean unload() {

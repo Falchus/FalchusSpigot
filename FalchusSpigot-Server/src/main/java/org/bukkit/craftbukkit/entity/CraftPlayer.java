@@ -371,9 +371,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
 
 	@Override
 	public void kickPlayer(String message) {
-        // [SpigotFix-0002] start
-//		org.spigotmc.AsyncCatcher.catchOp("player kick"); // Spigot
-        // [SpigotFix-0002] end
+		org.spigotmc.AsyncCatcher.catchOp("player kick"); // Spigot
 		if (getHandle().playerConnection == null) {
 			return;
 		}

@@ -5,8 +5,6 @@ import java.util.Iterator;
 import java.util.List;
 // CraftBukkit start
 import java.util.Random;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
 
 import ga.windpvp.windspigot.random.FastRandom;
 import org.apache.logging.log4j.LogManager;
@@ -202,9 +200,7 @@ public class ChunkProviderServer implements IChunkProvider {
 		}
 
 		if (chunk == null) {
-            // [SpigotFix-0003] start
-//			world.timings.syncChunkLoadTimer.startTiming(); // Spigot
-            // [SpigotFix-0003] end
+			world.timings.syncChunkLoadTimer.startTiming(); // Spigot
 			chunk = this.loadChunk(i, j);
 			if (chunk == null) {
 				if (this.chunkProvider == null) {
@@ -257,9 +253,7 @@ public class ChunkProviderServer implements IChunkProvider {
 			}
 			// CraftBukkit end
 			chunk.loadNearby(this, this, i, j);
-            // [SpigotFix-0003] start
-//			world.timings.syncChunkLoadTimer.stopTiming(); // Spigot
-            // [SpigotFix-0003] end
+			world.timings.syncChunkLoadTimer.stopTiming(); // Spigot
 		}
 
 		return chunk;
@@ -289,8 +283,6 @@ public class ChunkProviderServer implements IChunkProvider {
 		// CraftBukkit end
 	}
 
-    Executor executor = Executors.newCachedThreadPool(); // [SpigotFix-0003]
-
 	public Chunk loadChunk(int i, int j) {
 		if (this.chunkLoader == null) {
 			return null;
@@ -301,13 +293,9 @@ public class ChunkProviderServer implements IChunkProvider {
 				if (chunk != null) {
 					chunk.setLastSaved(this.world.getTime());
 					if (this.chunkProvider != null) {
-                        // [SpigotFix-0003] start
-//						world.timings.syncChunkLoadStructuresTimer.startTiming(); // Spigot
-                        // [SpigotFix-0003] end
+						world.timings.syncChunkLoadStructuresTimer.startTiming(); // Spigot
 						this.chunkProvider.recreateStructures(chunk, i, j);
-                        // [SpigotFix-0003] start
-//						world.timings.syncChunkLoadStructuresTimer.stopTiming(); // Spigot
-                        // [SpigotFix-0003] end
+						world.timings.syncChunkLoadStructuresTimer.stopTiming(); // Spigot
 					}
 				}
 

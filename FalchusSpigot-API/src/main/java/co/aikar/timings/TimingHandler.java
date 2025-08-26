@@ -108,10 +108,8 @@ class TimingHandler implements Timing {
 	public void stopTiming() {
 		if (enabled && --timingDepth == 0 && start != 0) {
 			if (!Bukkit.isPrimaryThread()) {
-                // [SpigotFix-0004] start
-//				Bukkit.getLogger().log(Level.SEVERE, "stopTiming called async for " + name);
-//				new Throwable().printStackTrace();
-                // [SpigotFix-0004] end
+				Bukkit.getLogger().log(Level.SEVERE, "stopTiming called async for " + name);
+				new Throwable().printStackTrace();
 				start = 0;
 				return;
 			}
