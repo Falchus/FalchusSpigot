@@ -18,6 +18,12 @@ public class ItemFishingRod extends Item {
 			// itemstack.damage(i, entityhuman); // FalchusSpigot
 			entityhuman.bw();
 		} else {
+			// FalchusSpigot start
+			if (itemstack.getData() >= itemstack.j() - 1) {
+				return itemstack;
+			}
+			// FalchusSpigot end
+			
 			// CraftBukkit start
 			EntityFishingHook hook = new EntityFishingHook(world, entityhuman);
 			PlayerFishEvent playerFishEvent = new PlayerFishEvent(
@@ -36,15 +42,6 @@ public class ItemFishingRod extends Item {
 			}
 
             itemstack.damage(1, entityhuman); // FalchusSpigot
-			
-			// FalchusSpigot start
-			if (itemstack.getData() >= itemstack.j()) {
-				if (entityhuman.hookedFish != null) {
-					entityhuman.hookedFish.l();
-					entityhuman.hookedFish = null;
-				}
-			}
-			// FalchusSpigot end
 
 			entityhuman.bw();
 			entityhuman.b(StatisticList.USE_ITEM_COUNT[Item.getId(this)]);
