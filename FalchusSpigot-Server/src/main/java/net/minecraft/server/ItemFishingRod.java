@@ -19,7 +19,7 @@ public class ItemFishingRod extends Item {
 			entityhuman.bw();
 		} else {
 			// FalchusSpigot start
-			if (itemstack.getData() >= itemstack.j() - 1) {
+			if (itemstack.getData() >= itemstack.j()) {
 				itemstack.damage(1, entityhuman);
 				entityhuman.bw();
 				entityhuman.b(StatisticList.USE_ITEM_COUNT[Item.getId(this)]);
