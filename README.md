@@ -13,7 +13,7 @@ These features don't include those of the patches - these are all of the feature
 - Bugfixes
   - Fixed Fishing Rods not losing durability unless pulled back (durability is now reduced immediately on use)
 
-## Patches
+## Patches (external)
 **All credit goes to the people that made these patches.**<br>
 *Give credit where credit is due!*
 ```
