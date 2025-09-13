@@ -263,6 +263,16 @@ public class EntityItem extends Entity implements HopperPusher {
 		this.damageEntity(DamageSource.FIRE, i);
 	}
 
+    // FalchusSpigot start
+	@Override
+	public void setOnFire(int i) {
+		if (!FalchusSpigotConfig.itemBurn) {
+			return;
+		}
+		super.setOnFire(i);
+	}
+    // FalchusSpigot end
+
 	@Override
 	public boolean damageEntity(DamageSource damagesource, float f) {
         // FalchusSpigot start
