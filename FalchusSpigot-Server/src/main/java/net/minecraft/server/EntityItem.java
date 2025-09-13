@@ -267,7 +267,7 @@ public class EntityItem extends Entity implements HopperPusher {
 	public boolean damageEntity(DamageSource damagesource, float f) {
         // FalchusSpigot start
         if ((damagesource == DamageSource.LAVA || damagesource == DamageSource.FIRE || damagesource == DamageSource.BURN) && !FalchusSpigotConfig.itemBurn) {
-            this.setPosition(this.locX, this.locY, this.locZ);
+            this.extinguish();
             return false;
         }
         // FalchusSpigot end
