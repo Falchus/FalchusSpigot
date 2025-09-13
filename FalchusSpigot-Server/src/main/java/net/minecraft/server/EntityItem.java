@@ -260,13 +260,17 @@ public class EntityItem extends Entity implements HopperPusher {
 	}
 
 	protected void burn(int i) {
-		if (!FalchusSpigotConfig.itemBurn) return; // FalchusSpigot
-
 		this.damageEntity(DamageSource.FIRE, i);
 	}
 
 	@Override
 	public boolean damageEntity(DamageSource damagesource, float f) {
+        // FalchusSpigot start
+        if ((damagesource == DamageSource.LAVA || damagesource == DamageSource.FIRE || damagesource == DamageSource.BURN) && !FalchusSpigotConfig.itemBurn) {
+            return false;
+        }
+        // FalchusSpigot end
+
 		if (this.isInvulnerable(damagesource)) {
 			return false;
 		} else if (this.getItemStack() != null && this.getItemStack().getItem() == Items.NETHER_STAR
@@ -279,9 +283,6 @@ public class EntityItem extends Entity implements HopperPusher {
 				return false;
 			}
 			// CraftBukkit end
-
-			if ((damagesource == DamageSource.FIRE || damagesource == DamageSource.LAVA || damagesource == DamageSource.BURN) && !FalchusSpigotConfig.itemBurn) return false; // FalchusSpigot
-
 			this.ac();
 			this.e = (int) (this.e - f);
 			if (this.e <= 0) {
