@@ -264,20 +264,10 @@ public class EntityItem extends Entity implements HopperPusher {
 	}
 
 	@Override
-	public void setOnFire(int i) {
-		// FalchusSpigot start
-		if (!FalchusSpigotConfig.itemBurn) {
-			this.setPosition(this.locX, this.locY, this.locZ); // MC-53850 workaround
-			return;
-		}
-		// FalchusSpigot end
-		super.setOnFire(i);
-	}
-
-	@Override
 	public boolean damageEntity(DamageSource damagesource, float f) {
         // FalchusSpigot start
         if ((damagesource == DamageSource.LAVA || damagesource == DamageSource.FIRE || damagesource == DamageSource.BURN) && !FalchusSpigotConfig.itemBurn) {
+            this.setPosition(this.locX, this.locY, this.locZ);
             return false;
         }
         // FalchusSpigot end
