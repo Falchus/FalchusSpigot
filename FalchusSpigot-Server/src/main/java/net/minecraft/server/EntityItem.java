@@ -280,7 +280,7 @@ public class EntityItem extends Entity implements HopperPusher {
 			}
 			// CraftBukkit end
 
-			if (damagesource == DamageSource.FIRE && !FalchusSpigotConfig.itemBurn) return false; // FalchusSpigot
+			if ((damagesource == DamageSource.FIRE || damagesource == DamageSource.LAVA || damagesource == DamageSource.BURN) && !FalchusSpigotConfig.itemBurn) return false; // FalchusSpigot
 
 			this.ac();
 			this.e = (int) (this.e - f);
