@@ -10,6 +10,7 @@ These features don't include those of the patches - these are all of the feature
   - Player Health Obfuscation
   - HelpCommand toggleable
   - Players can open chests even if they are under blocks
+  - Item burning toggleable
 - Bugfixes
   - Fixed Fishing Rods not losing durability unless pulled back (durability is now reduced immediately on use)
 

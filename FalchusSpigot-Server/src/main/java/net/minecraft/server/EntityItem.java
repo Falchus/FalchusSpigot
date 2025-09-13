@@ -2,6 +2,7 @@ package net.minecraft.server;
 
 import java.util.Iterator;
 
+import com.falchus.config.FalchusSpigotConfig;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.bukkit.event.player.PlayerPickupItemEvent; // CraftBukkit
@@ -259,6 +260,8 @@ public class EntityItem extends Entity implements HopperPusher {
 	}
 
 	protected void burn(int i) {
+		if (!FalchusSpigotConfig.itemBurn) return; // FalchusSpigot
+
 		this.damageEntity(DamageSource.FIRE, i);
 	}
 
@@ -276,6 +279,9 @@ public class EntityItem extends Entity implements HopperPusher {
 				return false;
 			}
 			// CraftBukkit end
+
+			if (damagesource == DamageSource.FIRE && !FalchusSpigotConfig.itemBurn) return false; // FalchusSpigot
+
 			this.ac();
 			this.e = (int) (this.e - f);
 			if (this.e <= 0) {
